@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Runa",
+    "slug": "runa",
+    "version": "1.0.0",
+    "platforms": ["android"],
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "runa",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#121212",
+        "foregroundImage": "./assets/images/adaptive-icon.png"
+      },
+      "permissions": ["READ_EXTERNAL_STORAGE", "MANAGE_EXTERNAL_STORAGE"],
+      "predictiveBackGestureEnabled": false,
+      "package": "app.simplyopen.runa"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#121212",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "android": {
+            "image": "./assets/images/splash-icon.png",
+            "imageWidth": 200
+          }
+        }
+      ],
+      "expo-sqlite",
+      "expo-image",
+      "expo-font",
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "673e004d-d720-4a6e-8591-329ca639f7e7"
+      }
+    },
+    "owner": "lasjdhu"
+  }
+}

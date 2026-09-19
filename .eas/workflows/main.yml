@@ -1,0 +1,40 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+
+defaults:
+  tools:
+    node: 22.13.1
+    pnpm: 11.2.2
+
+concurrency:
+  cancel_in_progress: true
+  group: ${{ workflow.filename }}-${{ github.ref }}
+
+jobs:
+  checks:
+    name: Package checks
+    environment: development
+    steps:
+      - uses: eas/checkout
+      - uses: eas/install_node_modules
+      - name: Lint
+        run: pnpm run lint:check
+      - name: Type check
+        run: pnpm run ts:check
+      - name: Expo dependency check
+        run: pnpm run expo:check
+      - name: Prettier check
+        run: pnpm run prettier:check
+
+  build_android_development:
+    name: Build Android development
+    environment: development
+    needs: [checks]
+    type: build
+    params:
+      platform: android
+      profile: development
