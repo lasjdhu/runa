@@ -15,10 +15,14 @@
       },
       "permissions": ["READ_EXTERNAL_STORAGE", "MANAGE_EXTERNAL_STORAGE"],
       "predictiveBackGestureEnabled": false,
-      "package": "app.simplyopen.runa"
+      "package": "online.dmitrii.runa"
+    },
+    "ios": {
+      "bundleIdentifier": "online.dmitrii.runa"
     },
     "plugins": [
       "expo-router",
+      "expo-dev-client",
       [
         "expo-splash-screen",
         {

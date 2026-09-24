@@ -25,7 +25,7 @@ import { useSettingsStore } from "../store";
 import { renderNativePdfPage } from "../reader";
 import RunaScanner from "../../../modules/runa-scanner/src";
 
-const APP_PACKAGE = "app.simplyopen.runa";
+const APP_PACKAGE = "online.dmitrii.runa";
 const IMPORT_DIRECTORY_NAME = "books";
 type ScanStatus =
   | "loading"
